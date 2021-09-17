@@ -1,11 +1,14 @@
-package com.elearning.service;
+package com.elearning.service.impl;
 
 import com.elearning.model.Course;
+import com.elearning.service.CourseService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
 @Service
+@Slf4j
 public class CourseServiceImpl implements CourseService {
 
     @Override

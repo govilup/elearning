@@ -1,9 +1,10 @@
-package com.elearning.service;
+package com.elearning.service.impl;
 
 import com.elearning.exception.CourseNotFoundException;
 import com.elearning.model.Course;
-import com.elearning.model.Student;
 import com.elearning.repository.CourseRepository;
+import com.elearning.service.StudentService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,6 +12,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
+@Slf4j
 public class StudentServiceImpl implements StudentService {
 
     @Autowired
@@ -23,6 +25,7 @@ public class StudentServiceImpl implements StudentService {
         if (course.isPresent()) {
             return course.get();
         } else {
+            log.error("Requested course with course id " + courseId + "is not present.");
             throw new CourseNotFoundException("Course not found");
         }
     }

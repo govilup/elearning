@@ -11,7 +11,7 @@ public interface TagService {
 
     Boolean createTags(List<Tag> tags);
 
-    Set<Tag> getTags(List<Integer> tagId);
+    Set<Tag> getTags();
 
     Boolean deleteTag(int id, String tagName);
 

@@ -1,4 +1,12 @@
 package com.elearning.exception;
 
-public class UserNotFoundException {
+import org.springframework.stereotype.Component;
+
+@Component
+public class UserNotFoundException extends RuntimeException {
+
+    public UserNotFoundException(String errorMessage) {
+        super(errorMessage);
+    }
+
 }

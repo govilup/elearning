@@ -10,6 +10,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+/**
+ * Login Controller - This is very basic login mechanism, can be upgraded using Spring Security.
+ */
 @RestController
 @RequestMapping("/login")
 public class LoginController {

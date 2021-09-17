@@ -57,7 +57,7 @@ public class TagsController {
     }
 
     @DeleteMapping("/{id}/{name}")
-    public ResponseEntity<String> createTag(@PathVariable Integer id, @PathVariable String name) {
+    public ResponseEntity<String> deleteTag(@PathVariable Integer id, @PathVariable String name) {
         if(id == null || name.isEmpty()) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Please check the request.");
         }

@@ -1,14 +1,27 @@
 package com.elearning.model;
 
-import javax.persistence.OneToMany;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.Setter;
+
+import javax.persistence.*;
 import java.util.Set;
 
-public class Instructor extends User {
+@Getter
+@Setter
+@Builder
+@Entity
+@Table(name = "Instructor")
+public class Instructor {
 
-    @OneToMany(mappedBy = "instructor")
-    private Set<Tag> tags;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
 
-    public Instructor(Integer id, String username, String password, String email, UserType userType) {
-        super(id, username, password, email, userType);
-    }
+    private String name;
+    private String email;
+
+    @ManyToMany(mappedBy = "instructors")
+    private Set<Course> courses;
+
 }
